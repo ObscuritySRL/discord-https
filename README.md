@@ -30,7 +30,7 @@ client.on(
   async (command: Command) => {
     command.defer(false);
 
-    await command.followup({ content: `${command.user.username} used ${command.name}` });
+    await command.followup({ content: `${command.user} used ${command.name}` });
   },
 );
 
@@ -42,7 +42,7 @@ client.on(
 
     await contextMenu.followup({
       content:
-        `${contextMenu.user.username} right-clicked ${contextMenu.target.getUser()?.username}`,
+        `${contextMenu.user} right-clicked ${contextMenu.target.getUser()}`,
     });
   },
 );
