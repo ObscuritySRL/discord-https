@@ -10,8 +10,6 @@ npm i https://github.com/ObscuritySRL/discord-https
 ## Usage
 
 ```ts
-import 'dotenv/config';
-
 import { Client } from 'discord-https';
 
 // Initiate a client
