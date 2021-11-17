@@ -16,20 +16,23 @@ client.on('authManagerReady', () => console.log('Auth Manager Ready'));
 client.on('fastifyManagerReady', () => console.log('Fastify Manager Ready'));
 
 client.on(
-  'commandInteraction',
+  'command',
   async (command: Command) => {
     command.defer(false);
 
-    await command.followup({ content: command.name });
+    await command.followup({ content: `${command.user.username} used ${command.name}` });
   },
 );
 
 client.on(
-  'contextMenuInteraction',
+  'contextMenu',
   async (contextMenu: ContextMenu) => {
     contextMenu.defer(false);
 
-    await contextMenu.followup({ content: contextMenu.name });
+    await contextMenu.followup({
+      content:
+        `${contextMenu.user.username} right-clicked ${contextMenu.target.getUser()?.username}`,
+    });
   },
 );
 

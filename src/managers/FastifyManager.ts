@@ -66,17 +66,11 @@ export default class FastifyManager {
       case InteractionType.APPLICATION_COMMAND:
         switch (request.body.data.type) {
           case ApplicationCommandType.CHAT_INPUT:
-            this.client.emit(
-              'commandInteraction',
-              new Command(this.client, request.body as CommandData, reply),
-            );
+            this.client.emit('command', new Command(this.client, request.body as CommandData, reply));
             break;
           case ApplicationCommandType.MESSAGE:
           case ApplicationCommandType.USER:
-            this.client.emit(
-              'contextMenuInteraction',
-              new ContextMenu(this.client, request.body as ContextMenuData, reply),
-            );
+            this.client.emit('contextMenu', new ContextMenu(this.client, request.body as ContextMenuData, reply));
             break;
           default:
         }
