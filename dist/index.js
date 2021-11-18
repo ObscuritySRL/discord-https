@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Webhook = exports.User = exports.Payload = exports.Message = exports.Member = exports.Embed = exports.CommandOptionResolver = exports.Command = exports.Attachment = exports.FastifyManager = exports.AuthManager = exports.Client = void 0;
+exports.Webhook = exports.User = exports.Payload = exports.Message = exports.Member = exports.Embed = exports.ContextMenuTargetResolver = exports.ContextMenu = exports.CommandOptionResolver = exports.Command = exports.Attachment = exports.FastifyManager = exports.AuthManager = exports.Client = void 0;
 // "Root" classes (starting points)
 var Client_1 = require("./clients/Client");
 Object.defineProperty(exports, "Client", { enumerable: true, get: function () { return __importDefault(Client_1).default; } });
@@ -21,6 +21,10 @@ var Command_1 = require("./structures/Command");
 Object.defineProperty(exports, "Command", { enumerable: true, get: function () { return __importDefault(Command_1).default; } });
 var CommandOptionResolver_1 = require("./structures/CommandOptionResolver");
 Object.defineProperty(exports, "CommandOptionResolver", { enumerable: true, get: function () { return __importDefault(CommandOptionResolver_1).default; } });
+var ContextMenu_1 = require("./structures/ContextMenu");
+Object.defineProperty(exports, "ContextMenu", { enumerable: true, get: function () { return __importDefault(ContextMenu_1).default; } });
+var ContextMenuTargetResolver_1 = require("./structures/ContextMenuTargetResolver");
+Object.defineProperty(exports, "ContextMenuTargetResolver", { enumerable: true, get: function () { return __importDefault(ContextMenuTargetResolver_1).default; } });
 var Embed_1 = require("./structures/Embed");
 Object.defineProperty(exports, "Embed", { enumerable: true, get: function () { return __importDefault(Embed_1).default; } });
 var GuildMember_1 = require("./structures/GuildMember");

@@ -11,12 +11,14 @@ const client = new __1.Client({
 });
 client.on('authManagerReady', () => console.log('Auth Manager Ready'));
 client.on('fastifyManagerReady', () => console.log('Fastify Manager Ready'));
-client.on('commandInteraction', async (command) => {
+client.on('command', async (command) => {
     command.defer(false);
-    await command.followup({ content: command.name });
+    await command.followup({ content: `${command.user} used ${command.name}` });
 });
-client.on('contextMenuInteraction', async (contextMenu) => {
+client.on('contextMenu', async (contextMenu) => {
     contextMenu.defer(false);
-    await contextMenu.followup({ content: contextMenu.name });
+    await contextMenu.followup({
+        content: `${contextMenu.user} right-clicked ${contextMenu.target.getUser()}`,
+    });
 });
 client.start();

@@ -38,11 +38,11 @@ class FastifyManager {
             case 2 /* APPLICATION_COMMAND */:
                 switch (request.body.data.type) {
                     case 1 /* CHAT_INPUT */:
-                        this.client.emit('commandInteraction', new Command_1.default(this.client, request.body, reply));
+                        this.client.emit('command', new Command_1.default(this.client, request.body, reply));
                         break;
                     case 3 /* MESSAGE */:
                     case 2 /* USER */:
-                        this.client.emit('contextMenuInteraction', new ContextMenu_1.default(this.client, request.body, reply));
+                        this.client.emit('contextMenu', new ContextMenu_1.default(this.client, request.body, reply));
                         break;
                     default:
                 }
